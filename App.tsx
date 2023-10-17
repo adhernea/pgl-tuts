@@ -1,22 +1,16 @@
-import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
-import Card from './components/Card';
+import { StyleSheet, Text, View } from 'react-native';
+import CardList from './components/CardList';
+import appColors from './assets/styles/appColors';
 
 export default function App() {
   return (
     <View style={styles.appContainer}>
       <Text style={styles.appTextTitle}>
-        Muestra del avatar
+        Muestra de personajazos
       </Text>
-      <Card
-        avatar={require('./assets/avatar.jpg')}
-        title='Brian the avatar'
-        body='This is the body of Brian The Avatar Card'
-      ></Card>
-      <Card
-        avatar={require('./assets/ricardio.png')}
-        title='Ricardio el de Berserk'
-        body='Este tio tiene el corazon igual de grande que su apetito'
-      ></Card>
+      <View style={styles.appBody}>
+        <CardList></CardList>
+      </View>
     </View>
   );
 }
@@ -24,14 +18,26 @@ export default function App() {
 const styles = StyleSheet.create({
   appContainer: {
     flex: 1,
-    backgroundColor: '#000000',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#fff',
   },
   appTextTitle: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#fff',
-
+    color: '#ffff',
+    marginTop: 45,
+    backgroundColor: appColors.primary,
+    width: '100%',
+    paddingVertical: 10,
+    textAlign: 'center',
+    textAlignVertical: 'center',
+    borderWidth: 1,
+    borderColor: 'black',
+    borderStyle: 'solid',
+    flex: 1,
   },
+  appBody: {
+    flex: 20,
+    // justifyContent: 'center',
+    // alignItems: 'center'
+  }
 });

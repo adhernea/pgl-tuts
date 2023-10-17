@@ -1,11 +1,16 @@
-import { Image, ImageProps, ScrollView, StyleSheet, Text, View } from 'react-native'
+import { Image, ImageBackground, ImageProps, ScrollView, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
 // rnfes to create new Component
+type CardProps = {
+  avatar: ImageProps,
+  title: string,
+  body: string,
+}
 
-const Card = (props: {avatar: ImageProps, title: string, body: string}) => {
+const Card = (props: CardProps) => {
 
-  const {avatar, title, body} = props;
+  const { avatar, title, body } = props;
 
   return (
     <View style={styles.cardContainer}>
@@ -16,7 +21,10 @@ const Card = (props: {avatar: ImageProps, title: string, body: string}) => {
         />
         <Text style={styles.cardTitleText}>{title}</Text>
       </View>
-      <ScrollView style={styles.cardBodyText}>
+      <ScrollView
+        style={styles.cardBodyText}
+        nestedScrollEnabled={true}
+      >
         <Text> {body} </Text>
       </ScrollView>
     </View>
@@ -31,7 +39,20 @@ const styles = StyleSheet.create({
     padding: 20,
     backgroundColor: "#fff",
     borderRadius: 20,
-    marginVertical: 10
+    marginVertical: 10,
+    borderWidth: 1,
+    borderColor: 'black',
+    borderStyle: 'solid',
+
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 7,
+    },
+    shadowOpacity: 0.43,
+    shadowRadius: 9.51,
+
+    elevation: 15,
   },
 
   avatarImage: {

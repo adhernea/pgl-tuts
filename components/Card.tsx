@@ -1,4 +1,4 @@
-import { Image, ImageBackground, ImageProps, ScrollView, StyleSheet, Text, View } from 'react-native'
+import { Image, ImageProps, ScrollView, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
 // rnfes to create new Component

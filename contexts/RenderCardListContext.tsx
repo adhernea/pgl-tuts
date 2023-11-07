@@ -1,5 +1,10 @@
 import React from 'react'
 
-const RenderCardListContext = React.createContext<boolean>(true)
+type RenderCardListContextType = {
+  isListRendered: boolean,
+  setIsListRendered: Function
+}
+
+const RenderCardListContext = React.createContext({} as RenderCardListContextType)
 
 export default RenderCardListContext;

@@ -6,7 +6,7 @@ import RenderCardListContext from '../contexts/RenderCardListContext'
 
 const Body = () => {
 
-  const isListRendered: boolean = React.useContext(RenderCardListContext)
+  const { isListRendered } = React.useContext(RenderCardListContext)
 
   return (
     <View style={styles.appBody}>

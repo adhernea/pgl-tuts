@@ -3,12 +3,17 @@ import React from 'react'
 import Ionicons from '@expo/vector-icons/Ionicons';
 import appColors from '../assets/styles/appColors';
 
-const Header = () => {
+type HeaderProps = {
+  isListRendered: boolean;
+  setIsListRendered: Function;
+}
 
-  const [isCheckIcon, setIsCheckIcon] = React.useState(true)
+const Header = (props: HeaderProps) => {
+
+  const { isListRendered, setIsListRendered } = props;
 
   const onClickIcon = () => {
-    setIsCheckIcon(!isCheckIcon)
+    setIsListRendered(!isListRendered)
   }
 
   return (
@@ -17,9 +22,9 @@ const Header = () => {
         Muestra de personajazos
       </Text>
       <Ionicons
-        name={isCheckIcon ? 'checkmark-circle-outline' : 'close-circle-outline'}
+        name={isListRendered ? 'checkmark-circle-outline' : 'close-circle-outline'}
         size={32}
-        color={isCheckIcon ? appColors.greenNeon : appColors.redNeon}
+        color={isListRendered ? appColors.greenNeon : appColors.redNeon}
         onPress={onClickIcon}
       />
     </View>

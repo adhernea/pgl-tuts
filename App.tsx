@@ -2,6 +2,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import CardList from './components/CardList';
 import Header from './components/Header';
 import React from 'react';
+import Body from './components/Body';
 
 
 export default function App() {
@@ -9,15 +10,8 @@ export default function App() {
 
   return (
     <View style={styles.appContainer}>
-      <Header isListRendered= {isListRendered} setIsListRendered={setIsListRendered}></Header>
-      <View style={styles.appBody}>
-        {
-          isListRendered ?
-          <CardList></CardList>
-          :
-          <Text>Nada que mostrar</Text>
-      }
-      </View>
+      <Header isListRendered={isListRendered} setIsListRendered={setIsListRendered}></Header>
+      <Body isListRendered={isListRendered}></Body>
     </View>
   );
 }
@@ -27,7 +21,4 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
   },
-  appBody: {
-    flex: 20
-  }
 });

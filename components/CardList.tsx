@@ -22,8 +22,6 @@ const CardList = () => {
               ></Card>
             )
           }
-
-
         </ScrollView>
       </ImageBackground>
     </View>

@@ -1,8 +1,8 @@
 import { StyleSheet, Text, View } from 'react-native';
-import CardList from './components/CardList';
 import Header from './components/Header';
 import React from 'react';
 import Body from './components/Body';
+import RenderCardListContext from './contexts/RenderCardListContext';
 
 
 export default function App() {
@@ -11,7 +11,11 @@ export default function App() {
   return (
     <View style={styles.appContainer}>
       <Header isListRendered={isListRendered} setIsListRendered={setIsListRendered}></Header>
-      <Body isListRendered={isListRendered}></Body>
+      <RenderCardListContext.Provider
+        value={true}
+      >
+        <Body></Body>
+      </RenderCardListContext.Provider>
     </View>
   );
 }

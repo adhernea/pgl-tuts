@@ -1,13 +1,13 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import CardList from './CardList'
+import RenderCardListContext from '../contexts/RenderCardListContext'
 
-type BodyProps = {
-  isListRendered: boolean;
-}
 
-const Body = (props: BodyProps) => {
-  const { isListRendered } = props;
+const Body = () => {
+
+  const isListRendered: boolean = React.useContext(RenderCardListContext)
+
   return (
     <View style={styles.appBody}>
       {

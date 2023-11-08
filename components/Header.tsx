@@ -2,14 +2,14 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import Ionicons from '@expo/vector-icons/Ionicons';
 import appColors from '../assets/styles/appColors';
-import RenderCardListContext from '../contexts/RenderCardListContext';
+import { RenderCardListContext } from '../contexts/RenderCardListContext';
 
 const Header = () => {
 
-  const { isListRendered, setIsListRendered } = React.useContext(RenderCardListContext)
+  let {isListRendered, toggleIsListRendered} = React.useContext(RenderCardListContext)
 
   const onClickIcon = () => {
-    setIsListRendered(!isListRendered)
+    toggleIsListRendered()
   }
 
   return (

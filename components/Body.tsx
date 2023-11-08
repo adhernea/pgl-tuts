@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import CardList from './CardList'
-import RenderCardListContext from '../contexts/RenderCardListContext'
+import { RenderCardListContext } from '../contexts/RenderCardListContext'
 
 
 const Body = () => {

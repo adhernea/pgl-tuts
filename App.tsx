@@ -2,7 +2,6 @@ import { StyleSheet, Text, View } from 'react-native';
 import Header from './components/Header';
 import React from 'react';
 import Body from './components/Body';
-import RenderCardListContext from './contexts/RenderCardListContext';
 import RenderCardListProvider from './providers/RenderCardListProvider';
 
 

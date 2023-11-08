@@ -2,20 +2,18 @@ import { StyleSheet, Text, View } from 'react-native';
 import Header from './components/Header';
 import React from 'react';
 import Body from './components/Body';
-import RenderCardListContext from './contexts/RenderCardListContext';
+import { RenderCardListContext } from './contexts/RenderCardListContext';
+import RenderCardListProvider from './providers/RenderCardListProvider';
 
 
 export default function App() {
-  const [isListRendered, setIsListRendered] = React.useState(true)
 
   return (
     <View style={styles.appContainer}>
-      <Header isListRendered={isListRendered} setIsListRendered={setIsListRendered}></Header>
-      <RenderCardListContext.Provider
-        value={true}
-      >
+      <RenderCardListProvider>
+        <Header></Header>
         <Body></Body>
-      </RenderCardListContext.Provider>
+      </RenderCardListProvider>
     </View>
   );
 }

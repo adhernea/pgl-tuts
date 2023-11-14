@@ -6,23 +6,11 @@ import { RenderCardListContext } from '../contexts/RenderCardListContext';
 
 const Header = () => {
 
-  let {isListRendered, toggleIsListRendered} = React.useContext(RenderCardListContext)
-
-  const onClickIcon = () => {
-    toggleIsListRendered()
-  }
-
   return (
     <View style={styles.headerContainer}>
       <Text style={styles.textTile}>
-        Muestra de personajazos
+        My App Header
       </Text>
-      <Ionicons
-        name={isListRendered ? 'checkmark-circle-outline' : 'close-circle-outline'}
-        size={32}
-        color={isListRendered ? appColors.greenNeon : appColors.redNeon}
-        onPress={onClickIcon}
-      />
     </View>
   )
 }

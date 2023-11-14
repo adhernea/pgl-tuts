@@ -1,18 +1,17 @@
-import { StyleSheet, Text, View } from 'react-native';
-import Header from './components/Header';
+import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
+import { StyleSheet, View } from 'react-native';
 import Body from './components/Body';
-import RenderCardListProvider from './providers/RenderCardListProvider';
-
+import Header from './components/Header';
 
 export default function App() {
 
   return (
     <View style={styles.appContainer}>
-      <RenderCardListProvider>
+      <NavigationContainer>
         <Header></Header>
         <Body></Body>
-      </RenderCardListProvider>
+      </NavigationContainer>
     </View>
   );
 }

@@ -1,18 +1,30 @@
-import { StyleSheet, Text, View } from 'react-native';
-import Header from './components/Header';
+import { StyleSheet, View } from 'react-native';
 import React from 'react';
-import Body from './components/Body';
-import RenderCardListProvider from './providers/RenderCardListProvider';
+import { NavigationContainer, Theme } from '@react-navigation/native';
+import CustomDrawer from './components/CustomDrawer';
+import appColors from './assets/styles/appColors';
 
 
 export default function App() {
 
+  const myTheme: Theme = {
+    dark: false,
+    colors: {
+      primary: appColors.white,
+      background: appColors.secondary,
+      card: appColors.primary,
+      text: appColors.white,
+      border: 'yellow',
+      notification: 'purple',
+    },
+  }
+
   return (
     <View style={styles.appContainer}>
-      <RenderCardListProvider>
-        <Header></Header>
-        <Body></Body>
-      </RenderCardListProvider>
+      {/* <NavigationContainer theme={myTheme}> */}
+      <NavigationContainer >
+        <CustomDrawer></CustomDrawer>
+      </NavigationContainer>
     </View>
   );
 }

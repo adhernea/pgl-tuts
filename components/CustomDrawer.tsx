@@ -6,6 +6,7 @@ import HomeScreen from '../screens/HomeScreen';
 import LoginScreen from '../screens/LoginScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import appColors from '../assets/styles/appColors';
+import DogsFactsScreen from '../screens/DogsFactsScreen';
 
 const Drawer = createDrawerNavigator();
 
@@ -34,6 +35,7 @@ const CustomDrawer = () => {
     <Drawer.Navigator initialRouteName='Home' screenOptions={drawerNavigatorScreenOptions}>
       <Drawer.Screen name='Home' component={HomeScreen} options={{ title: 'Homium' }} />
       <Drawer.Screen name='Login' component={LoginScreen} />
+      <Drawer.Screen name='Dogs Facts' component={DogsFactsScreen} />
       <Drawer.Screen name='Settings' component={SettingsScreen} />
     </Drawer.Navigator>
   )

@@ -29,3 +29,4 @@ Finalmente, ejecuta el proyecto reseteando la caché:
 ## Estilos del Drawer
 Los estilos son un poco triquiñuelos, pero buscando por internet y con la ayuda de las propiedades que brinda Typescript se puede investigar con ensayo y error para conseguir lo que te propongas.
 En la [página de documentación de theme](https://reactnavigation.org/docs/themes) hay una pequeña guía sobre como tener una temática general en la app.
+Adicionalmente, te dejo este [vídeo de iutuf](https://www.youtube.com/watch?v=F0B0PoxRaRU) sobre cómo personalizar el Drawer con typescript.

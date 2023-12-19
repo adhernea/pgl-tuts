@@ -69,6 +69,7 @@ const DogsFactsScreen = () => {
         style={styles.factsContainer}
         data={dogsFacts}
         renderItem={(fact) => <Text style={styles.fact}>{fact.item}</Text>}
+        keyExtractor={(item, index) => index.toString()}
       />
     </View>
   )

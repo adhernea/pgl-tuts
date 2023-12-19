@@ -1,9 +1,9 @@
-import { Button, Image, ImageProps, ImageURISource, Pressable, StyleSheet, Text, View } from 'react-native'
-import React, { useEffect, useState } from 'react'
-import { getDogsFacts, getDogsImageUrl } from '../services/dogsFactsService'
+import React, { useState } from 'react'
+import { Image, ImageURISource, Pressable, StyleSheet, Text, View } from 'react-native'
 import { FlatList, TextInput } from 'react-native-gesture-handler'
-import appColors from '../assets/styles/appColors'
 import Spinner from 'react-native-loading-spinner-overlay'
+import appColors from '../assets/styles/appColors'
+import { getDogsFacts, getDogsImageUrl } from '../services/dogsFactsService'
 
 const DogsFactsScreen = () => {
 

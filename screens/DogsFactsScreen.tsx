@@ -3,9 +3,11 @@ import React, { useEffect, useState } from 'react'
 import { getDogsFacts } from '../services/dogsFactsService'
 import { FlatList, TextInput } from 'react-native-gesture-handler'
 import appColors from '../assets/styles/appColors'
+import Spinner from 'react-native-loading-spinner-overlay'
 
 const DogsFactsScreen = () => {
 
+  let [displaySpinner, setDisplaySpinner] = useState<boolean>(false);
   let [totalFacts, setTotalFacts] = useState<string>("1");
   let [dogsFacts, setDogsFacts] = useState<string[]>([]);
 
@@ -22,9 +24,13 @@ const DogsFactsScreen = () => {
 
   const fetchFacts = () => {
     const fetchData = async () => {
+      setDisplaySpinner(true)
+
       const newDogsFacts = await getDogsFacts(totalFacts)
       console.log(newDogsFacts)
       setDogsFacts(newDogsFacts)
+  
+      setDisplaySpinner(false)
     }
 
     fetchData();
@@ -32,6 +38,11 @@ const DogsFactsScreen = () => {
 
   return (
     <View style={styles.screenContainer}>
+      <Spinner
+        visible={displaySpinner}
+        textContent={'Requesting dogs facts...'}
+        textStyle={{ color: '#FFF' }}
+      />
       <Text style={styles.title}>Buscador de curiosidades sobre perros</Text>
       <TextInput
         style={styles.factsInput}

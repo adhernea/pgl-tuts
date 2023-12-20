@@ -109,9 +109,9 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase'
   },
   dogImage: {
-    width: 120,
-    height: 120,
-    borderRadius: 100,
+    width: 240,
+    height: 160,
+    borderRadius: 50,
     alignSelf: 'center',
     marginTop: 10
   },

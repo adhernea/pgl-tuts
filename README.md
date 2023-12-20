@@ -30,3 +30,19 @@ Finalmente, ejecuta el proyecto reseteando la caché:
 Los estilos son un poco triquiñuelos, pero buscando por internet y con la ayuda de las propiedades que brinda Typescript se puede investigar con ensayo y error para conseguir lo que te propongas.
 En la [página de documentación de theme](https://reactnavigation.org/docs/themes) hay una pequeña guía sobre como tener una temática general en la app.
 Adicionalmente, te dejo este [vídeo de iutuf](https://www.youtube.com/watch?v=F0B0PoxRaRU) sobre cómo personalizar el Drawer con typescript.
+
+## Consultas a API
+- Siempre deben estar en un servicio.
+- Se pueden hacer consultas en paralelo mediante el método all de Promise:
+```
+const results = await Promise.all([
+  getDogsImageUrl(),
+  getDogsFacts(totalFacts)
+])
+
+const newDogsImgUrl: ImageURISource = { uri: results[0] }
+setDogImage(newDogsImgUrl)
+
+const newDogsFacts = results[1]
+setDogsFacts(newDogsFacts)
+```

@@ -23,7 +23,7 @@ const getInitRequest = (httpVerb: string): RequestInit => {
   return init;
 }
 
-export const getDogsImageUrl = async (): Promise<string> => {
+const getDogsImageUrl = async (): Promise<string> => {
   const response = await fetch(DOGS_IMGS_URL, getInitRequest('GET'))
   const json: DogsImageJsonResponse = await response.json()
   if (json != null) {
@@ -34,7 +34,7 @@ export const getDogsImageUrl = async (): Promise<string> => {
 
 }
 
-export const getDogsFacts = async (totalFacts: string): Promise<string[]> => {
+const getDogsFacts = async (totalFacts: string): Promise<string[]> => {
   let facts: string[] = [];
 
   const request: RequestInfo = `${DOGS_FACTS_API_URL}${FACTS_PATH}?number=${totalFacts}` ;
@@ -46,4 +46,9 @@ export const getDogsFacts = async (totalFacts: string): Promise<string[]> => {
   }
 
   return facts;
+}
+
+export const dogsFactsService = {
+  getDogsImageUrl,
+  getDogsFacts
 }

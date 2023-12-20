@@ -3,7 +3,7 @@ import { Image, ImageURISource, Pressable, StyleSheet, Text, View } from 'react-
 import { FlatList, TextInput } from 'react-native-gesture-handler'
 import Spinner from 'react-native-loading-spinner-overlay'
 import appColors from '../assets/styles/appColors'
-import { getDogsFacts, getDogsImageUrl } from '../services/dogsFactsService'
+import { dogsFactsService } from '../services/dogsFactsService'
 
 const DogsFactsScreen = () => {
 
@@ -27,10 +27,10 @@ const DogsFactsScreen = () => {
     const fetchData = async () => {
       setDisplaySpinner(true)
 
-      const newDogsImgUrl: ImageURISource = { uri: await getDogsImageUrl() }
+      const newDogsImgUrl: ImageURISource = { uri: await dogsFactsService.getDogsImageUrl() }
       setDogImage(newDogsImgUrl)
 
-      const newDogsFacts = await getDogsFacts(totalFacts)
+      const newDogsFacts = await dogsFactsService.getDogsFacts(totalFacts)
       setDogsFacts(newDogsFacts)
 
       setDisplaySpinner(false)

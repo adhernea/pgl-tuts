@@ -48,7 +48,9 @@ const getDogsFacts = async (totalFacts: string): Promise<string[]> => {
   return facts;
 }
 
-export const dogsFactsService = {
+const dogsFactsService = {
   getDogsImageUrl,
   getDogsFacts
 }
+
+export default dogsFactsService;

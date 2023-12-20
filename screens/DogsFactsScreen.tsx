@@ -3,7 +3,7 @@ import { Image, ImageURISource, Pressable, StyleSheet, Text, View } from 'react-
 import { FlatList, TextInput } from 'react-native-gesture-handler'
 import Spinner from 'react-native-loading-spinner-overlay'
 import appColors from '../assets/styles/appColors'
-import { dogsFactsService } from '../services/dogsFactsService'
+import dogsFactsService from '../services/dogsFactsService'
 
 const DogsFactsScreen = () => {
 
